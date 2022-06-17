@@ -1,5 +1,5 @@
 {
-  "name": "micromath",
+  "name": "micro-math",
   "version": "0.2.0",
   "description": "Tiny lil math utilities",
   "author": "Tim Morris <timthewebguy@gmail.com>",
@@ -41,5 +41,5 @@
     "tsup": "^5.12.7",
     "vitest": "^0.11.0"
   },
-  "gitHead": "67b6ba4a17439ffcd195ed240c7dc265683d5ed0"
+  "gitHead": "c9a3459c1801300caa8060b4fce0a32a3effbb39"
 }
