@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tkofh/micro-math/compare/micro-math@0.4.0...micro-math@0.5.0) (2022-09-03)
+
+
+### Features
+
+* vectorLength and normalizeVector ([e57b599](https://github.com/tkofh/micro-math/commit/e57b599f7747b2eee3b98b682e88cba09056ac45))
+
+
+
+
+
 # [0.4.0](https://github.com/tkofh/micro-math/compare/micro-math@0.3.0...micro-math@0.4.0) (2022-09-03)
 
 
