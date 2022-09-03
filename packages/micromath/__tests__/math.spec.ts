@@ -1,5 +1,18 @@
 import { describe, test, expect, vi } from 'vitest'
-import {clamp, distance, lerp, lineSlope, lineYIntercept, mod, normalize, quadraticRoots, remap, roundTo} from '../src'
+import {
+  clamp,
+  distance,
+  lerp,
+  lineSlope,
+  lineYIntercept,
+  mod,
+  normalize,
+  normalizeVector,
+  quadraticRoots,
+  remap,
+  roundTo,
+  vectorLength,
+} from '../src'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -206,5 +219,21 @@ describe('roundTo', () => {
     expect(roundTo(1.23456, 3)).toBe(1.235)
 
     expect(roundTo(0, 1)).toBe(0)
+  })
+})
+
+describe('vector', () => {
+  describe('vectorLength', () => {
+    test('it computes the length of a vector', ({ expect }) => {
+      expect(vectorLength(0, 0)).toBe(0)
+      expect(vectorLength(0, 1)).toBe(1)
+      expect(vectorLength(1, 1)).toBe(Math.sqrt(2))
+    })
+  })
+
+  describe('normalizeVector', () => {
+    test('it normalizes a vector', ({ expect }) => {
+      expect(normalizeVector(0, 2)).toStrictEqual([0, 1])
+    })
   })
 })
