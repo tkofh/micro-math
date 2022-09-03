@@ -1,6 +1,7 @@
 export { clamp } from './clamp'
 export { distance } from './distance'
 export { lerp } from './lerp'
+export { lineSlope, lineYIntercept } from './line'
 export { mod } from './mod'
 export { normalize } from './normalize'
 export { cubicPolynomial, quadraticPolynomial } from './polynomial'

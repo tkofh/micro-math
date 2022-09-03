@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest'
-import { clamp, distance, lerp, mod, normalize, quadraticRoots, remap, roundTo } from '../src'
+import {clamp, distance, lerp, lineSlope, lineYIntercept, mod, normalize, quadraticRoots, remap, roundTo} from '../src'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -68,6 +68,31 @@ describe('lerp', () => {
   test('it extrapolates an inverted range', () => {
     expect(lerp(1.5, 0, -10, false)).toBe(-15)
     expect(lerp(-0.5, 0, -10, false)).toBe(5)
+  })
+})
+
+describe('line', () => {
+  describe('lineSlope', () => {
+    test('it gets the slope of a line', ({ expect }) => {
+      expect(lineSlope(0, 0, 1, 2)).toBe(2)
+    })
+
+    test('it handles horizontal lines', ({ expect }) => {
+      expect(lineSlope(0, 1, 1, 1)).toBe(0)
+    })
+
+    test('it handles vertical lines', ({ expect }) => {
+      expect(lineSlope(1, 0, 1, 1)).toBe(Infinity)
+    })
+  })
+  describe('y intercept', () => {
+    test('it gets the y intercept of a line', ({ expect }) => {
+      expect(lineYIntercept(0, 0, 1, 1)).toBe(0)
+    })
+
+    test('it handles vertical lines', ({ expect }) => {
+      expect(lineYIntercept(1, 0, 1, 1)).toBeUndefined()
+    })
   })
 })
 
