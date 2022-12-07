@@ -135,6 +135,11 @@ describe('mod', () => {
     expect(mod(3, 6, 9)).toBe(6)
     expect(mod(-10, -2, 0)).toBe(-2)
   })
+
+  test('it mods with max exclusive', () => {
+    const result = mod(5, 0, 5, 'max')
+    expect(result).toBe(0)
+  })
 })
 
 describe('normalize', () => {
