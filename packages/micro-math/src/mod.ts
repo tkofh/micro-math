@@ -42,7 +42,7 @@ export const mod = (
     result = min
   }
 
-  if (result === -0) {
+  if (Object.is(result, -0)) {
     result = 0
   }
 
