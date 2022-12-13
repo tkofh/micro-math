@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/tkofh/micro-math/compare/micro-math@0.6.1...micro-math@0.6.2) (2022-12-13)
+
+### Bug Fixes
+
+- **micro-math:** effectively test for -0 mod result ([8cda438](https://github.com/tkofh/micro-math/commit/8cda4380121dcfa485b1c095c412ea359b6f18ec))
+
 ## [0.6.1](https://github.com/tkofh/micro-math/compare/micro-math@0.6.0...micro-math@0.6.1) (2022-12-13)
 
 ### Bug Fixes
