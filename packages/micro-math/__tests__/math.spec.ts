@@ -115,7 +115,7 @@ describe('mod', () => {
   })
 
   test('it handles an inverted range', () => {
-    expect(mod(5, 0, -1)).toBe(-1)
+    expect(mod(5, 0, -1)).toBe(0)
   })
 
   test('it returns value within range', () => {
@@ -137,8 +137,23 @@ describe('mod', () => {
   })
 
   test('it mods with max exclusive', () => {
-    const result = mod(5, 0, 5, 'max')
-    expect(result).toBe(0)
+    expect(mod(5, 0, 5, 'max')).toBe(0)
+  })
+
+  test('it mods with min exclusive', () => {
+    expect(mod(-5, 0, 5, 'min')).toBe(5)
+  })
+
+  test('it mods with differently signed input and constraints', () => {
+    expect(mod(10, -4, -2)).toBe(-2)
+    expect(mod(-10, -4, -2)).toBe(-4)
+  })
+
+  test('it mods split-signed ranges', () => {
+    expect(mod(10, -1, 2)).toBe(1)
+    expect(mod(10, -1, 1)).toBe(0)
+    expect(mod(-10, -1, 2)).toBe(-1)
+    expect(mod(-10, -1, 1)).toBe(0)
   })
 })
 
