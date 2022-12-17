@@ -1,5 +1,5 @@
 export { clamp } from './clamp'
-export { distance } from './distance'
+export { distance, distance2D } from './distance'
 export { lerp } from './lerp'
 export { lineSlope, lineYIntercept } from './line'
 export { mod } from './mod'

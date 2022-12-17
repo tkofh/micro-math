@@ -2,6 +2,7 @@ import { describe, test, expect, vi } from 'vitest'
 import {
   clamp,
   distance,
+  distance2D,
   lerp,
   lineSlope,
   lineYIntercept,
@@ -27,12 +28,12 @@ describe('clamp', () => {
   })
 })
 
-describe('distance', () => {
-  test('it handles no distance efficiently', ({ expect }) => {
+describe('distance2D', () => {
+  test('it handles no distance2D efficiently', ({ expect }) => {
     const absSpy = vi.spyOn(Math, 'abs')
     const sqrtSpy = vi.spyOn(Math, 'sqrt')
 
-    expect(distance(0, 0, 0, 0)).toBe(0)
+    expect(distance2D(0, 0, 0, 0)).toBe(0)
 
     expect(absSpy).not.toHaveBeenCalled()
     expect(sqrtSpy).not.toHaveBeenCalled()
@@ -40,13 +41,24 @@ describe('distance', () => {
   test('it handles vertical and horizontal lines efficiently', ({ expect }) => {
     const sqrtSpy = vi.spyOn(Math, 'sqrt')
 
-    expect(distance(0, 0, 0, 10)).toBe(10)
-    expect(distance(0, 0, 10, 0)).toBe(10)
+    expect(distance2D(0, 0, 0, 10)).toBe(10)
+    expect(distance2D(0, 0, 10, 0)).toBe(10)
 
     expect(sqrtSpy).not.toHaveBeenCalled()
   })
   test('it handles any coordinates', ({ expect }) => {
-    expect(distance(0, 0, 1, 1)).toBe(Math.sqrt(2))
+    expect(distance2D(0, 0, 1, 1)).toBe(Math.sqrt(2))
+  })
+})
+
+describe('distance', () => {
+  test('it handles any coordinates', ({ expect }) => {
+    expect(distance([1, 0, 5], [0, 2, 4])).toBe(Math.sqrt(6))
+  })
+  test('it throws for differently dimensioned points', ({ expect }) => {
+    expect(() => distance([1, 2], [3])).toThrowError(
+      'Cannot compute the distance between two points with different dimensions'
+    )
   })
 })
 
