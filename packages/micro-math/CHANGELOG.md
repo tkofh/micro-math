@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tkofh/micro-math/compare/micro-math@0.6.2...micro-math@0.7.0) (2022-12-17)
+
+### Features
+
+- **micro-math:** breaking: make distance dimension-independent, add distance2D ([d8a3cdd](https://github.com/tkofh/micro-math/commit/d8a3cddbfbaa3828636659880f439a8743e3ab3c))
+
 ## [0.6.2](https://github.com/tkofh/micro-math/compare/micro-math@0.6.1...micro-math@0.6.2) (2022-12-13)
 
 ### Bug Fixes
