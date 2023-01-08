@@ -1,6 +1,7 @@
 import { describe, test, expect, vi } from 'vitest'
 import {
   clamp,
+  determinant,
   distance,
   distance2D,
   lerp,
@@ -9,6 +10,7 @@ import {
   mod,
   normalize,
   normalizeVector,
+  polynomial,
   quadraticRoots,
   remap,
   roundTo,
@@ -121,6 +123,41 @@ describe('line', () => {
   })
 })
 
+describe('matrix', () => {
+  test('finds determinant of 1x1 matrices', ({ expect }) => {
+    expect(determinant([[1]])).toBe(1)
+  })
+  test('finds determinant of 2x2 matrices', ({ expect }) => {
+    expect(
+      determinant([
+        [1, 2],
+        [3, 4],
+      ])
+    ).toBe(-2)
+  })
+  test('finds determinant of larger matrices', ({ expect }) => {
+    expect(
+      determinant([
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ])
+    ).toBe(0)
+
+    expect(
+      determinant([
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16],
+      ])
+    ).toBe(0)
+  })
+  test('throws for invalid matrix', ({ expect }) => {
+    expect(() => determinant([[1, 2]])).toThrowError('Cannot find determinant of non-square matrix')
+  })
+})
+
 describe('mod', () => {
   test('it returns the min for a 0 range', () => {
     expect(mod(5, 0, 0)).toBe(0)
@@ -194,6 +231,12 @@ describe('normalize', () => {
   test('it extrapolates an inverted range', () => {
     expect(normalize(-15, 0, -10)).toBe(1.5)
     expect(normalize(5, 0, -10)).toBe(-0.5)
+  })
+})
+
+describe('polynomial', () => {
+  test('finds polynomial', ({ expect }) => {
+    expect(polynomial(2, [2, -1], 'descending')).toBe(3)
   })
 })
 

@@ -8,12 +8,12 @@
   "sideEffects": false,
   "type": "module",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -28,7 +28,7 @@
     "url": "git+https://github.com/tkofh/micro-math.git"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "unbuild",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepublish": "yarn test && yarn build"
@@ -38,9 +38,10 @@
   },
   "devDependencies": {
     "@vitest/ui": "^0.25.7",
-    "tsup": "^5.12.7",
-    "typescript": "^4.9.3",
-    "vitest": "^0.25.7"
+    "typescript": "^4.9.4",
+    "unbuild": "^1.0.2",
+    "vite": "^4.0.4",
+    "vitest": "^0.25.8"
   },
   "gitHead": "c9a3459c1801300caa8060b4fce0a32a3effbb39"
 }
