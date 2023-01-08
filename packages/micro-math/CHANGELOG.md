@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/tkofh/micro-math/compare/micro-math@0.7.0...micro-math@0.8.0) (2023-01-08)
+
+### Features
+
+- **micro-math:** migrate to unbuild, add determinant and polynomial ([f5684c2](https://github.com/tkofh/micro-math/commit/f5684c20a9cb53ea1621fd0b0ea21ebb63b25fdf))
+
 # [0.7.0](https://github.com/tkofh/micro-math/compare/micro-math@0.6.2...micro-math@0.7.0) (2022-12-17)
 
 ### Features
