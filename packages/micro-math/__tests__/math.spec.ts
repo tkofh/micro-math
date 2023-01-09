@@ -16,6 +16,7 @@ import {
   roundTo,
   vectorLength,
 } from '../src'
+import { solveLinearSystem } from '../src/matrix'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -124,37 +125,54 @@ describe('line', () => {
 })
 
 describe('matrix', () => {
-  test('finds determinant of 1x1 matrices', ({ expect }) => {
-    expect(determinant([[1]])).toBe(1)
-  })
-  test('finds determinant of 2x2 matrices', ({ expect }) => {
-    expect(
-      determinant([
-        [1, 2],
-        [3, 4],
-      ])
-    ).toBe(-2)
-  })
-  test('finds determinant of larger matrices', ({ expect }) => {
-    expect(
-      determinant([
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-      ])
-    ).toBe(0)
+  describe('determinant', () => {
+    test('finds determinant of 1x1 matrices', ({ expect }) => {
+      expect(determinant([[1]])).toBe(1)
+    })
+    test('finds determinant of 2x2 matrices', ({ expect }) => {
+      expect(
+        determinant([
+          [1, 2],
+          [3, 4],
+        ])
+      ).toBe(-2)
+    })
+    test('finds determinant of larger matrices', ({ expect }) => {
+      expect(
+        determinant([
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+        ])
+      ).toBe(0)
 
-    expect(
-      determinant([
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 16],
-      ])
-    ).toBe(0)
+      expect(
+        determinant([
+          [1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9, 10, 11, 12],
+          [13, 14, 15, 16],
+        ])
+      ).toBe(0)
+    })
+    test('throws for invalid matrix', ({ expect }) => {
+      expect(() => determinant([[1, 2]])).toThrowError(
+        'Cannot find determinant of non-square matrix'
+      )
+    })
   })
-  test('throws for invalid matrix', ({ expect }) => {
-    expect(() => determinant([[1, 2]])).toThrowError('Cannot find determinant of non-square matrix')
+  describe('solveLinearSystem', () => {
+    test('it solves linear systems', ({ expect }) => {
+      expect(
+        solveLinearSystem(
+          [
+            [1, 1],
+            [-3, 1],
+          ],
+          [6, 2]
+        )
+      ).toStrictEqual([1, 5])
+    })
   })
 })
 
