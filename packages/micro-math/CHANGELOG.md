@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/tkofh/micro-math/compare/micro-math@0.8.0...micro-math@0.9.0) (2023-01-09)
+
+### Bug Fixes
+
+- **micro-math:** export solveLinearSystem ([35b5a7f](https://github.com/tkofh/micro-math/commit/35b5a7f5f5f590d463c122ae523d49f3c59c0f61))
+
+### Features
+
+- **micro-math:** solveLinearSystem ([3316ddd](https://github.com/tkofh/micro-math/commit/3316dddd22ea412daed0c55099540983c7f881c1))
+
 # [0.8.0](https://github.com/tkofh/micro-math/compare/micro-math@0.7.0...micro-math@0.8.0) (2023-01-08)
 
 ### Features
