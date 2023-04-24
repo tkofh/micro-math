@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/tkofh/micro-math/compare/micro-math@0.9.0...micro-math@0.10.0) (2023-04-24)
+
+### Features
+
+- precision util ([40acd46](https://github.com/tkofh/micro-math/commit/40acd46e950000a0f9b19238db0a7703e8ed4c3b))
+
 # [0.9.0](https://github.com/tkofh/micro-math/compare/micro-math@0.8.0...micro-math@0.9.0) (2023-01-09)
 
 ### Bug Fixes
