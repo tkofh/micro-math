@@ -11,12 +11,13 @@ import {
   normalize,
   normalizeVector,
   polynomial,
+  precision,
   quadraticRoots,
   remap,
   roundTo,
   vectorLength,
+  solveLinearSystem,
 } from '../src'
-import { solveLinearSystem } from '../src/matrix'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -255,6 +256,15 @@ describe('normalize', () => {
 describe('polynomial', () => {
   test('finds polynomial', ({ expect }) => {
     expect(polynomial(2, [2, -1], 'descending')).toBe(3)
+  })
+})
+
+describe('precision', () => {
+  test('it calculates precision', ({ expect }) => {
+    expect(precision(0)).toBe(0)
+    expect(precision(0.1)).toBe(1)
+    expect(precision(0.01)).toBe(2)
+    expect(precision(0.001)).toBe(3)
   })
 })
 
